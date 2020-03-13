@@ -42,7 +42,7 @@ summarise_.grouped_ffdf <- function(.data, ..., .dots){
   for (i in grouped_chunks(.data)){
     ch <- grouped_df(data_s[i,,drop=FALSE], groups(.data))
     res <- summarise_(ch, .dots = dots)
-    out <- append_to(out, res, check_structure=FALSE)
+    out <- append_to(out, tbl_ffdf(res), check_structure=FALSE)
   }
   out
 }
